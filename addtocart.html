@@ -64,7 +64,7 @@
             but.innerText='REMOVE'
             get_div.appendChild(but);
         
-            but.addEventListener("click",(i)=>{
+            but.addEventListener("click",((i)=>{
                 return ()=>{
                     data.splice(i,1);
                     clear();
@@ -72,7 +72,7 @@
                     localStorage.setItem("cart",JSON.stringify(data));
 
                 }
-            })
+            })(i));
         });
         function clear(){
                 get_div.innerText="";
